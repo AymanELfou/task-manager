@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-task-form',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './task-form.component.html',
-  styleUrl: './task-form.component.css'
+  styleUrls: ['./task-form.component.css']
 })
 export class TaskFormComponent {
+  title: string = '';
 
+  addTask() {
+    console.log('Nouvelle tâche ajoutée:', this.title);
+    this.title = '';
+  }
 }

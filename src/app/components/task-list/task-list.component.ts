@@ -6,10 +6,14 @@ import { CommonModule } from '@angular/common';
   selector: 'app-task-list',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './task-list.component.html'
+  templateUrl: './task-list.component.html',
+  styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent {
-  tasks = this.taskService.tasks;
 
-  constructor(private taskService: TaskService) {}
+  tasks: any;
+
+  constructor(public taskService: TaskService) {
+    this.tasks = this.taskService.tasks;
+  }
 }

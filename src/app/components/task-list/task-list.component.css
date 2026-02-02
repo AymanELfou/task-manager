@@ -1,0 +1,59 @@
+/* Conteneur principal */
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+/* Une tâche */
+li {
+  background: #111;
+  color: #fff;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.2);
+}
+
+/* Texte de la tâche */
+li span {
+  flex: 1;
+  font-size: 16px;
+}
+
+/* Boutons */
+button {
+  margin-left: 8px;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Bouton valider */
+button:first-of-type {
+  background: orange;
+  color: black;
+}
+
+/* Bouton supprimer */
+button:last-of-type {
+  background: #ff4500;
+  color: white;
+}
+
+/* Hover */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Tâche terminée */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}

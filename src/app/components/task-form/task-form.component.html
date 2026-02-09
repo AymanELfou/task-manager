@@ -1,1 +1,22 @@
-<button (click)="addTask()">Ajouter</button>
+<div class="form-container">
+  <input
+    type="text"
+    placeholder="Nouvelle tâche..."
+    [(ngModel)]="title"
+  >
+
+  <button
+    (click)="addTask()"
+    [disabled]="!title.trim()"
+  >
+    Ajouter
+  </button>
+</div>
+<div class="tasks-list">
+  <div
+    *ngFor="let task of tasks"
+    class="task-item"
+  >
+    <span>{{ task.title }}</span>
+    <button (click)="deleteTask(task.id)">Supprimer</button>
+  </div>

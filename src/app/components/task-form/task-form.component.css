@@ -1,0 +1,59 @@
+/* Conteneur du formulaire */
+.form-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #111;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.25);
+}
+
+/* Champ input */
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid orange;
+  background: #000;
+  color: #fff;
+  outline: none;
+}
+
+/* Placeholder */
+input::placeholder {
+  color: #aaa;
+}
+
+/* Focus */
+input:focus {
+  border-color: #ff8c00;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.6);
+}
+
+/* Bouton ajouter */
+button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: orange;
+  color: black;
+  transition: 0.3s;
+}
+
+/* Hover */
+button:hover {
+  background: #ff8c00;
+}
+
+/* Désactiver bouton si input vide (optionnel) */
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+

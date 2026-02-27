@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-task-form',
@@ -9,10 +10,20 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./task-form.component.css']
 })
 export class TaskFormComponent {
-  title: string = '';
+  private taskService = inject(TaskService);
+
+  title = signal('');
+  tasks = this.taskService.tasks;
 
   addTask() {
-    console.log('Nouvelle tâche ajoutée:', this.title);
-    this.title = '';
+    const currentTitle = this.title().trim();
+    if (currentTitle) {
+      this.taskService.addTask(currentTitle);
+      this.title.set('');
+    }
+  }
+
+  deleteTask(taskId: number) {
+    this.taskService.deleteTask(taskId);
   }
 }

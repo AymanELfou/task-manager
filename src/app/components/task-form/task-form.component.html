@@ -1,22 +1,17 @@
 <div class="form-container">
-  <input
-    type="text"
-    placeholder="Nouvelle tâche..."
-    [(ngModel)]="title"
-  >
+  <input #taskInput type="text" placeholder="Nouvelle tâche..." [value]="title()" (input)="title.set(taskInput.value)"
+    (keyup.enter)="addTask()">
 
-  <button
-    (click)="addTask()"
-    [disabled]="!title.trim()"
-  >
+  <button (click)="addTask()" [disabled]="!title().trim()">
     Ajouter
   </button>
 </div>
+
 <div class="tasks-list">
-  <div
-    *ngFor="let task of tasks"
-    class="task-item"
-  >
+  @for (task of tasks(); track task.id) {
+  <div class="task-item">
     <span>{{ task.title }}</span>
     <button (click)="deleteTask(task.id)">Supprimer</button>
   </div>
+  }
+</div>

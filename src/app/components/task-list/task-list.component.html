@@ -1,7 +1,9 @@
-<div *ngFor="let task of tasks()">
+@for (task of tasks(); track task.id) {
+<div class="task-item">
   <span [style.textDecoration]="task.completed ? 'line-through' : ''">
     {{ task.title }}
   </span>
   <button (click)="taskService.toggleTask(task.id)">✔</button>
   <button (click)="taskService.deleteTask(task.id)">❌</button>
 </div>
+}
